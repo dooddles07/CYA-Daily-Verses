@@ -1,15 +1,52 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { BookOpen, Search as SearchIcon, X } from "lucide-react";
+import { BookOpen, Globe, Search as SearchIcon, Shuffle, X } from "lucide-react";
 import { Badge, Card } from "@/components/ui";
-import { categories, verseLibrary } from "@/lib/data";
+import { categories, verseLibrary, type Verse } from "@/lib/data";
+import {
+  fetchParsedPassage,
+  fetchRandomVerse,
+  parseReference,
+} from "@/lib/bible-api";
 
 export function SearchClient() {
   const params = useSearchParams();
   const [query, setQuery] = useState(params.get("q") ?? "");
   const [topic, setTopic] = useState(params.get("topic") ?? "");
+  const [lookup, setLookup] = useState<Verse | null>(null);
+  const [lookupLoading, setLookupLoading] = useState(false);
+
+  // Live passage lookup (wldeh/bible-api CDN, KJV) when the query reads like a reference
+  useEffect(() => {
+    const parsed = parseReference(query);
+    if (!parsed) {
+      setLookup(null);
+      setLookupLoading(false);
+      return;
+    }
+    setLookupLoading(true);
+    let cancelled = false;
+    const id = window.setTimeout(async () => {
+      const verse = await fetchParsedPassage(parsed);
+      if (cancelled) return;
+      setLookup(verse);
+      setLookupLoading(false);
+    }, 500);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(id);
+    };
+  }, [query]);
+
+  const randomVerse = async () => {
+    setLookupLoading(true);
+    const verse = await fetchRandomVerse();
+    if (verse) setQuery(verse.reference);
+    setLookup(verse);
+    setLookupLoading(false);
+  };
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -47,6 +84,39 @@ export function SearchClient() {
           >
             <X className="h-4 w-4" aria-hidden />
           </button>
+        )}
+      </div>
+
+      {/* Random verse */}
+      <div className="mt-4 flex justify-center">
+        <button
+          type="button"
+          onClick={randomVerse}
+          className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-full border border-line bg-surface px-5 text-sm font-semibold text-ink-soft shadow-soft transition-all duration-200 hover:border-primary hover:text-primary-700"
+        >
+          <Shuffle className="h-4 w-4" aria-hidden />
+          Surprise me with a random verse
+        </button>
+      </div>
+
+      {/* Live passage lookup (bible-api.com) */}
+      <div aria-live="polite">
+        {lookupLoading && (
+          <div className="skeleton mx-auto mt-8 h-32 max-w-3xl rounded-3xl" />
+        )}
+        {!lookupLoading && lookup && (
+          <div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-sky-mist bg-sky-tint p-8 shadow-lift">
+            <div className="flex items-center gap-2">
+              <Globe className="h-4 w-4 text-primary" aria-hidden />
+              <span className="text-xs font-extrabold uppercase tracking-wider text-primary-700">
+                Live Scripture · {lookup.version}
+              </span>
+            </div>
+            <blockquote className="verse-text mt-4 text-lg leading-relaxed text-ink sm:text-xl">
+              “{lookup.text}”
+            </blockquote>
+            <p className="mt-4 text-sm font-extrabold text-primary-700">{lookup.reference}</p>
+          </div>
         )}
       </div>
 

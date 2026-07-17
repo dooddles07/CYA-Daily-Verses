@@ -5,19 +5,24 @@ import { VerseToday } from "@/components/home/verse-today";
 import { Reveal } from "@/components/motion";
 import { Card, SectionHeading } from "@/components/ui";
 import { verseLibrary } from "@/lib/data";
+import { getTodayLabel, getVerseOfTheDay } from "@/lib/bible-api";
 
 export const metadata: Metadata = {
   title: "Daily Verse",
   description: "Today's verse with reflection, prayer, and related scriptures.",
 };
 
+// Refresh the verse of the day every 24h
+export const revalidate = 86400;
+
 const reflectionQuestions = [
-  "Where in your life are you most tired right now — and have you brought it to God?",
-  "What would it look like, practically, to “wait on the Lord” this week?",
-  "Who around you is weary? How could you share this promise with them today?",
+  "What does this verse show you about who God is?",
+  "Where does this word meet your life right now — school, family, work, or a quiet worry?",
+  "Who could you encourage with this verse today, and how?",
 ];
 
-export default function VersePage() {
+export default async function VersePage() {
+  const verseOfTheDay = await getVerseOfTheDay();
   return (
     <div className="pt-24 pb-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -32,7 +37,7 @@ export default function VersePage() {
       </div>
 
       <div className="mt-12">
-        <VerseToday />
+        <VerseToday verse={verseOfTheDay} dateLabel={getTodayLabel()} />
       </div>
 
       <div className="mx-auto mt-16 grid max-w-4xl gap-6 px-4 sm:px-6 lg:px-8">
@@ -42,20 +47,20 @@ export default function VersePage() {
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-tint text-primary">
                 <BookOpen className="h-5 w-5" aria-hidden />
               </span>
-              <h2 className="text-xl font-extrabold text-ink">Understanding the verse</h2>
+              <h2 className="text-xl font-extrabold text-ink">How to sit with this verse</h2>
             </div>
             <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-ink-soft">
               <p>
-                Isaiah wrote to a people in exile — tired, displaced, and
-                wondering if God had forgotten them. Into that exhaustion, God
-                answers not with a demand to try harder, but with a promise:
-                <em> those who hope in the LORD will renew their strength.</em>
+                Don&apos;t rush. Read today&apos;s verse twice — once for the
+                words, once for the Voice behind them. Scripture was written to
+                real people in real seasons, and the same Spirit speaks through
+                it now.
               </p>
               <p>
-                The Hebrew word for “hope” here (<em>qavah</em>) means to wait
-                with expectation — like a watchman certain the sun will rise.
-                Strength is not something we generate; it is something we
-                receive while waiting on Him.
+                Notice one word or phrase that stands out to you. That&apos;s
+                usually where God is inviting you to slow down. Carry that
+                phrase into your day — on your commute, between classes, before
+                you sleep.
               </p>
             </div>
           </Card>
@@ -91,17 +96,17 @@ export default function VersePage() {
               <h2 className="text-xl font-extrabold text-ink">A prayer for today</h2>
             </div>
             <p className="verse-text mt-5 text-lg italic leading-relaxed text-ink">
-              Father, I confess I often run on my own strength until it runs
-              out. Teach me to wait on You — in the quiet before the busy, in
-              hope before the answer. Renew me like You promised: wings to
-              soar, legs to run, feet to keep walking. In Jesus&apos; name, Amen.
+              Father, thank You for speaking to me today. Let this word take
+              root in my heart — not just read, but lived. Give me grace to
+              obey what I&apos;ve seen, and to carry Your peace into everything
+              this day holds. In Jesus&apos; name, Amen.
             </p>
           </Card>
         </Reveal>
 
         <Reveal>
           <section aria-label="Related verses">
-            <h2 className="text-xl font-extrabold text-ink">More verses on strength &amp; hope</h2>
+            <h2 className="text-xl font-extrabold text-ink">More verses to carry with you</h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {verseLibrary.slice(1, 5).map((v) => (
                 <Link

@@ -47,6 +47,10 @@ import {
   readingPlan,
   testimonials,
 } from "@/lib/data";
+import { getTodayLabel, getVerseOfTheDay } from "@/lib/bible-api";
+
+// Refresh the verse of the day every 24h
+export const revalidate = 86400;
 
 const icons = {
   Sparkles, Sunrise, Heart, Lightbulb, Leaf, Mountain, HandHeart, Church,
@@ -56,12 +60,13 @@ const icons = {
 
 const days = ["M", "T", "W", "T", "F", "S", "S"];
 
-export default function HomePage() {
+export default async function HomePage() {
   const featured = devotions[0];
+  const verseOfTheDay = await getVerseOfTheDay();
   return (
     <>
-      <Hero />
-      <VerseToday />
+      <Hero verse={verseOfTheDay} />
+      <VerseToday verse={verseOfTheDay} dateLabel={getTodayLabel()} />
 
       {/* ---- Verse categories ---- */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" aria-label="Verse categories">

@@ -12,11 +12,17 @@ import {
   Share2,
   Volume2,
 } from "lucide-react";
-import { todaysVerse } from "@/lib/data";
+import type { Verse } from "@/lib/data";
 
 type Feedback = { msg: string } | null;
 
-export function VerseToday() {
+export function VerseToday({
+  verse: todaysVerse,
+  dateLabel,
+}: {
+  verse: Verse;
+  dateLabel: string;
+}) {
   const [saved, setSaved] = useState(false);
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [speaking, setSpeaking] = useState(false);
@@ -103,7 +109,7 @@ export function VerseToday() {
 
           <div className="relative">
             <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-white/80">
-              Today&apos;s Verse · July 17, 2026
+              Today&apos;s Verse · {dateLabel}
             </p>
             <blockquote className="verse-text mt-6 text-2xl leading-snug sm:text-[2rem]">
               “{todaysVerse.text}”
@@ -140,9 +146,9 @@ export function VerseToday() {
             <div className="mt-8 flex items-start gap-3 rounded-2xl bg-white/12 p-4 backdrop-blur-sm">
               <HandHelping className="mt-0.5 h-5 w-5 shrink-0 text-white/80" aria-hidden />
               <p className="text-sm leading-relaxed text-white/90">
-                <span className="font-bold">Short prayer:</span> Lord, when I am
-                tired, teach me to wait on You. Renew my strength today, and let
-                me walk without fainting. Amen.
+                <span className="font-bold">Short prayer:</span> Lord, thank You
+                for this word today. Plant it deep in my heart, and help me
+                live it out before the day is done. Amen.
               </p>
             </div>
           </div>

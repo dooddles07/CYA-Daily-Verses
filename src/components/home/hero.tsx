@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, BookOpen, Flame, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui";
-import { todaysVerse, streak } from "@/lib/data";
+import { streak, type Verse } from "@/lib/data";
 
 const particles = [
   { left: "8%", top: "22%", size: 8, delay: 0 },
@@ -17,7 +17,7 @@ const particles = [
   { left: "42%", top: "86%", size: 5, delay: 1.0 },
 ];
 
-export function Hero() {
+export function Hero({ verse: todaysVerse }: { verse: Verse }) {
   return (
     <section className="relative overflow-hidden pt-16" aria-label="Welcome">
       {/* Animated gradient wash */}
