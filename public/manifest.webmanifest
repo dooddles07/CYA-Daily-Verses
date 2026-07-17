@@ -1,0 +1,17 @@
+{
+  "name": "CYA Daily Verse",
+  "short_name": "CYA Verse",
+  "description": "Christ's Youth in Action — God's Word, every morning.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0095ff",
+  "icons": [
+    {
+      "src": "/media/cya-logo.png",
+      "sizes": "750x750",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
