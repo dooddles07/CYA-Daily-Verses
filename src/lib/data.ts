@@ -62,7 +62,7 @@ export const devotions = [
     slug: "wings-like-eagles",
     title: "Wings Like Eagles: Strength for the Waiting Season",
     excerpt: "Waiting is not wasted time. Isaiah reminds us that hope in the Lord is an exchange — our exhaustion for His strength.",
-    author: "Ptr. Daniel Reyes",
+    author: "Ralph",
     readTime: "4 min",
     date: "July 17, 2026",
     verse: "Isaiah 40:31",
@@ -71,7 +71,7 @@ export const devotions = [
     slug: "new-every-morning",
     title: "New Every Morning",
     excerpt: "God's mercies don't run out at midnight. Every sunrise is a fresh page of grace written just for you.",
-    author: "Sis. Angel Cruz",
+    author: "Julie",
     readTime: "3 min",
     date: "July 16, 2026",
     verse: "Lamentations 3:22-23",
@@ -80,7 +80,7 @@ export const devotions = [
     slug: "young-and-called",
     title: "Young and Called",
     excerpt: "Timothy was told to never let his youth disqualify him. Neither should you — your generation is your mission field.",
-    author: "Bro. Mark Santos",
+    author: "MJ",
     readTime: "5 min",
     date: "July 15, 2026",
     verse: "1 Timothy 4:12",
@@ -102,10 +102,10 @@ export const readingPlan = {
 };
 
 export const prayerWall = [
-  { name: "Anonymous", request: "Please pray for my upcoming board exams. I'm nervous but trusting God's plan.", prayedCount: 47, time: "2h ago", tag: "Studies" },
-  { name: "Kim A.", request: "Praying for my father's healing and full recovery from surgery.", prayedCount: 132, time: "5h ago", tag: "Healing" },
-  { name: "Joshua M.", request: "For our youth camp this August — that many young people will encounter Christ.", prayedCount: 89, time: "8h ago", tag: "Ministry" },
-  { name: "Anonymous", request: "Struggling with anxiety lately. Pray that I find peace in God's presence.", prayedCount: 64, time: "12h ago", tag: "Peace" },
+  { name: "Kim", request: "Please pray for my upcoming board exams. I'm nervous but trusting God's plan.", prayedCount: 47, time: "2h ago", tag: "Studies" },
+  { name: "MJ", request: "Praying for my father's healing and full recovery from surgery.", prayedCount: 132, time: "5h ago", tag: "Healing" },
+  { name: "Ralph", request: "For our youth camp this August — that many young people will encounter Christ.", prayedCount: 89, time: "8h ago", tag: "Ministry" },
+  { name: "Julie", request: "Struggling with anxiety lately. Pray that I find peace in God's presence.", prayedCount: 64, time: "12h ago", tag: "Peace" },
 ];
 
 export const challenges = [
@@ -116,8 +116,8 @@ export const challenges = [
 ];
 
 export const quotes = [
-  { text: "God's Word is a lamp that never runs out of oil.", author: "CYA Devotional Team" },
-  { text: "You are never too young to be used by God, and never too old to be renewed by Him.", author: "Ptr. Daniel Reyes" },
+  { text: "God's Word is a lamp that never runs out of oil.", author: "Gwen" },
+  { text: "You are never too young to be used by God, and never too old to be renewed by Him.", author: "Ralph" },
   { text: "Prayer is not a backup plan. It is the battle plan.", author: "CYA Youth Camp 2025" },
   { text: "Kay Kristo Buong Buhay, Habambuhay!", author: "CYA — Christ's Youth in Action" },
 ];
@@ -129,7 +129,7 @@ export const events = [
     displayDate: "Aug 8, 2026",
     time: "1:00 PM",
     location: "CYA Main Hall, Quezon City",
-    speaker: "Ptr. Daniel Reyes",
+    speaker: "Ralph",
     image: "/media/step-in-shine-out.jpg",
     tag: "Youth Camp",
   },
@@ -139,7 +139,7 @@ export const events = [
     displayDate: "Jul 25, 2026",
     time: "6:00 PM",
     location: "Fellowship Center, Room 204",
-    speaker: "CYA Worship Team",
+    speaker: "Gwen & the CYA Worship Team",
     image: "/media/community-group.jpg",
     tag: "Fellowship",
   },
@@ -149,7 +149,7 @@ export const events = [
     displayDate: "Aug 22, 2026",
     time: "9:00 AM",
     location: "CYA Training Room",
-    speaker: "Sis. Angel Cruz",
+    speaker: "Julie",
     image: "/media/leader-teaching.jpg",
     tag: "Leadership",
   },
@@ -163,13 +163,13 @@ export const testimonials = [
     image: "/media/community-group.jpg",
   },
   {
-    name: "Rolph",
+    name: "Ralph",
     role: "Youth Leader",
     quote: "The reading streak turned our whole small group into daily Bible readers. We compare streaks like it's a game — but the Word is real.",
     image: "/media/member-joy.jpg",
   },
   {
-    name: "Teacher Grace",
+    name: "MJ",
     role: "Ministry Volunteer",
     quote: "The prayer wall carried me through my hardest season. Dozens of young people I've never met prayed for my family.",
     image: "/media/leader-teaching.jpg",
