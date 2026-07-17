@@ -80,7 +80,7 @@ export default function HomePage() {
               <StaggerItem key={c.name}>
                 <Link
                   href={`/search?topic=${encodeURIComponent(c.name)}`}
-                  className="group flex items-center gap-3 rounded-2xl border border-line bg-white p-4 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-mist hover:shadow-lift"
+                  className="group flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-mist hover:shadow-lift"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-tint text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
                     <Icon className="h-5 w-5" aria-hidden />
@@ -125,7 +125,7 @@ export default function HomePage() {
                 sizes="(min-width:1024px) 40vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" aria-hidden />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" aria-hidden />
               <Badge tone="white" className="absolute left-4 top-4">Featured devotion</Badge>
             </div>
             <div className="flex flex-1 flex-col p-7">
@@ -256,7 +256,7 @@ export default function HomePage() {
       </section>
 
       {/* ---- Quotes ---- */}
-      <section className="border-y border-line bg-white py-24" aria-label="Inspiring quotes">
+      <section className="border-y border-line bg-surface py-24" aria-label="Inspiring quotes">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <QuoteCarousel />
@@ -340,7 +340,7 @@ export default function HomePage() {
                       alt=""
                       width={44}
                       height={44}
-                      className="h-11 w-11 rounded-full border-2 border-white object-cover shadow-soft"
+                      className="h-11 w-11 rounded-full border-2 border-surface object-cover shadow-soft"
                     />
                     <span>
                       <span className="block text-sm font-extrabold text-ink">{t.name}</span>
@@ -373,7 +373,7 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
                   href="/register"
-                  className="inline-flex h-13 cursor-pointer items-center rounded-full bg-white px-8 text-base font-bold text-primary-700 shadow-soft transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+                  className="inline-flex h-13 cursor-pointer items-center rounded-full bg-white px-8 text-base font-bold text-[#005ea8] shadow-soft transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
                 >
                   Create free account
                 </Link>

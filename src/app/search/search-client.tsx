@@ -36,7 +36,7 @@ export function SearchClient() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by keyword or reference, e.g. “hope” or “John 3:16”"
           aria-label="Search verses"
-          className="h-14 w-full rounded-full border border-line bg-white pl-13 pr-12 text-[15px] text-ink shadow-soft outline-none transition-shadow duration-200 placeholder:text-ink-faint focus:border-primary focus:shadow-lift"
+          className="h-14 w-full rounded-full border border-line bg-surface pl-13 pr-12 text-[15px] text-ink shadow-soft outline-none transition-shadow duration-200 placeholder:text-ink-faint focus:border-primary focus:shadow-lift"
         />
         {query && (
           <button
@@ -119,7 +119,7 @@ export function SearchClient() {
               key={c.name}
               type="button"
               onClick={() => { setTopic(c.name); setQuery(""); }}
-              className="cursor-pointer rounded-full border border-line bg-white px-4 py-1.5 text-xs font-bold text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary-700"
+              className="cursor-pointer rounded-full border border-line bg-surface px-4 py-1.5 text-xs font-bold text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary-700"
             >
               {c.name}
             </button>

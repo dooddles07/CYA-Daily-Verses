@@ -107,7 +107,7 @@ export default function VersePage() {
                 <Link
                   key={v.reference}
                   href={`/search?q=${encodeURIComponent(v.reference)}`}
-                  className="group rounded-3xl border border-line bg-white p-6 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift"
+                  className="group rounded-3xl border border-line bg-surface p-6 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift"
                 >
                   <p className="verse-text text-[15px] leading-relaxed text-ink">
                     “{v.text.length > 140 ? v.text.slice(0, 140) + "…" : v.text}”

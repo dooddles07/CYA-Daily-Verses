@@ -33,7 +33,7 @@ function EventCard({ event }: { event: (typeof events)[number] }) {
         />
         <Badge tone="white" className="absolute left-4 top-4">{event.tag}</Badge>
         {cd && (
-          <span className="absolute bottom-4 left-4 rounded-full bg-ink/75 px-3.5 py-1.5 text-xs font-extrabold text-white backdrop-blur-sm">
+          <span className="absolute bottom-4 left-4 rounded-full bg-black/60 px-3.5 py-1.5 text-xs font-extrabold text-white backdrop-blur-sm">
             In {cd.days}d {cd.hours}h
           </span>
         )}

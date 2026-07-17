@@ -61,7 +61,7 @@ export function PrayerClient() {
                 disabled={anonymous}
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="name"
-                className="mt-2 h-12 w-full rounded-2xl border border-line bg-white px-4 text-[15px] outline-none transition-colors duration-200 placeholder:text-ink-faint focus:border-primary disabled:bg-sky-soft disabled:text-ink-faint"
+                className="mt-2 h-12 w-full rounded-2xl border border-line bg-surface px-4 text-[15px] outline-none transition-colors duration-200 placeholder:text-ink-faint focus:border-primary disabled:bg-sky-soft disabled:text-ink-faint"
                 placeholder="e.g. Kim"
               />
             </div>
@@ -77,7 +77,7 @@ export function PrayerClient() {
                 rows={4}
                 aria-invalid={!!error}
                 aria-describedby={error ? "pr-error" : "pr-help"}
-                className="mt-2 w-full resize-none rounded-2xl border border-line bg-white p-4 text-[15px] leading-relaxed outline-none transition-colors duration-200 placeholder:text-ink-faint focus:border-primary"
+                className="mt-2 w-full resize-none rounded-2xl border border-line bg-surface p-4 text-[15px] leading-relaxed outline-none transition-colors duration-200 placeholder:text-ink-faint focus:border-primary"
                 placeholder="How can we pray for you?"
               />
               {error ? (
@@ -158,7 +158,7 @@ export function PrayerClient() {
                       >
                         <HandHelping className="h-4 w-4" aria-hidden />
                         {done ? "Praying" : "I prayed"}
-                        <span className={`rounded-full px-1.5 text-xs ${done ? "bg-white/20" : "bg-white"}`}>
+                        <span className={`rounded-full px-1.5 text-xs ${done ? "bg-white/20" : "bg-surface"}`}>
                           {p.prayedCount + (done ? 1 : 0)}
                         </span>
                       </motion.button>

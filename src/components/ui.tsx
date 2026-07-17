@@ -14,7 +14,7 @@ const buttonVariants = {
   secondary:
     "bg-sky-tint text-primary-700 hover:bg-sky-mist",
   outline:
-    "border border-line bg-white text-ink hover:border-primary hover:text-primary-700",
+    "border border-line bg-surface text-ink hover:border-primary hover:text-primary-700",
   ghost: "text-ink-soft hover:bg-sky-soft hover:text-primary-700",
 } as const;
 
@@ -68,9 +68,10 @@ export function Badge({
 }) {
   const tones = {
     sky: "bg-sky-tint text-primary-700",
-    gold: "bg-[#fff4d6] text-[#9a6b00]",
-    green: "bg-[#e2f8ee] text-[#116b4a]",
-    white: "bg-white/85 text-ink shadow-soft",
+    gold: "bg-amber-soft text-amber-strong",
+    green: "bg-mint-soft text-mint-strong",
+    // stays white in both themes — always sits on photos
+    white: "bg-white/85 text-[#0f2233] shadow-soft",
   };
   return (
     <span
@@ -97,7 +98,7 @@ export function Card({
   return (
     <div
       className={cx(
-        "rounded-3xl border border-line bg-white shadow-soft",
+        "rounded-3xl border border-line bg-surface shadow-soft",
         hover &&
           "transition-all duration-300 hover:-translate-y-1 hover:border-sky-mist hover:shadow-lift",
         className

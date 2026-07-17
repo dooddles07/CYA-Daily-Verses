@@ -115,7 +115,7 @@ export function VerseToday() {
             <div className="mt-9 flex flex-wrap items-center gap-2.5">
               <Link
                 href="/verse"
-                className="inline-flex h-11 cursor-pointer items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-primary-700 shadow-soft transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+                className="inline-flex h-11 cursor-pointer items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-[#005ea8] shadow-soft transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
               >
                 <BookOpen className="h-4.5 w-4.5" aria-hidden />
                 Read reflection &amp; prayer
@@ -127,7 +127,7 @@ export function VerseToday() {
                   onClick={onClick}
                   className={`inline-flex h-11 cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-semibold transition-all duration-200 active:scale-[0.96] ${
                     active
-                      ? "border-white bg-white text-primary-700"
+                      ? "border-white bg-white text-[#005ea8]"
                       : "border-white/40 bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
@@ -158,7 +158,7 @@ export function VerseToday() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.22 }}
-              className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-lift"
+              className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-bg shadow-lift"
             >
               {feedback.msg}
             </motion.div>

@@ -34,7 +34,7 @@ export default function DashboardPage() {
         <Reveal>
           <Card hover={false} className="p-7">
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff4d6] text-[#c98a00]">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-soft text-amber-strong">
                 <Flame className="h-6 w-6" aria-hidden />
               </span>
               <div>
@@ -63,7 +63,7 @@ export default function DashboardPage() {
         <Reveal delay={0.1}>
           <Card hover={false} className="p-7">
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e2f8ee] text-success">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-mint-soft text-mint-strong">
                 <BookOpen className="h-6 w-6" aria-hidden />
               </span>
               <div>

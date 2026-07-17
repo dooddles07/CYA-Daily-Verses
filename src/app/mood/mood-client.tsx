@@ -28,7 +28,7 @@ export function MoodClient() {
               className={`cursor-pointer rounded-full px-5 py-2.5 text-sm font-semibold shadow-soft transition-all duration-200 ${
                 active
                   ? "bg-primary text-white shadow-glow"
-                  : "border border-line bg-white text-ink-soft hover:-translate-y-0.5 hover:border-primary hover:text-primary-700"
+                  : "border border-line bg-surface text-ink-soft hover:-translate-y-0.5 hover:border-primary hover:text-primary-700"
               }`}
             >
               {m.feeling}
@@ -46,8 +46,7 @@ export function MoodClient() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4, ease: [0.21, 0.66, 0.29, 0.99] }}
-              className="mx-auto max-w-2xl rounded-[2rem] border border-line p-10 text-center shadow-lift"
-              style={{ background: selected.tint }}
+              className="mx-auto max-w-2xl rounded-[2rem] border border-line bg-sky-tint p-10 text-center shadow-lift"
             >
               <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary-700">
                 For when you say: “{selected.feeling}”

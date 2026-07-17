@@ -64,7 +64,7 @@ export function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary"
                 >
                   <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="currentColor" aria-hidden>
                     <path d={brandIcons[label]} />
@@ -74,7 +74,7 @@ export function Footer() {
               <a
                 href="mailto:hello@cya.ph"
                 aria-label="Email"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-ink-soft transition-colors duration-200 hover:border-primary hover:text-primary"
               >
                 <Mail className="h-4.5 w-4.5" aria-hidden />
               </a>

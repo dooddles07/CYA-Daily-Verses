@@ -33,7 +33,7 @@ export default function DevotionPage() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" aria-hidden />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" aria-hidden />
             <div className="absolute bottom-6 left-6 right-6">
               <Badge tone="white">Today · {featured.verse}</Badge>
               <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">

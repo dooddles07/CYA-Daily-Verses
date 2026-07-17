@@ -23,7 +23,7 @@ export function Hero() {
       {/* Animated gradient wash */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 -top-32 h-[480px] w-[480px] rounded-full bg-sky-mist opacity-70 blur-3xl motion-safe:animate-drift" />
-        <div className="absolute -right-40 top-24 h-[520px] w-[520px] rounded-full bg-[#d9f1ff] opacity-80 blur-3xl motion-safe:animate-drift [animation-delay:-9s]" />
+        <div className="absolute -right-40 top-24 h-[520px] w-[520px] rounded-full bg-sky-mist opacity-60 blur-3xl motion-safe:animate-drift [animation-delay:-9s]" />
         <div className="absolute bottom-0 left-1/3 h-[360px] w-[520px] rounded-full bg-sky-tint blur-3xl" />
         {/* Floating particles */}
         {particles.map((p, i) => (
@@ -48,7 +48,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.21, 0.66, 0.29, 0.99] }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky-mist bg-white/80 px-4 py-1.5 text-xs font-bold text-primary-700 shadow-soft">
+            <span className="inline-flex items-center gap-2 rounded-full border border-sky-mist bg-surface/80 px-4 py-1.5 text-xs font-bold text-primary-700 shadow-soft">
               <Sparkles className="h-3.5 w-3.5" aria-hidden />
               Kay Kristo Buong Buhay, Habambuhay!
             </span>
@@ -114,7 +114,7 @@ export function Hero() {
               Take 60 quiet seconds. Read it slowly. Let it carry you into the day.
             </p>
           </div>
-          <div className="absolute -bottom-10 -left-6 z-20 hidden w-44 rotate-[-4deg] overflow-hidden rounded-3xl border-4 border-white shadow-lift motion-safe:animate-float-slow sm:block">
+          <div className="absolute -bottom-10 -left-6 z-20 hidden w-44 rotate-[-4deg] overflow-hidden rounded-3xl border-4 border-surface shadow-lift motion-safe:animate-float-slow sm:block">
             <Image
               src="/media/member-joy.jpg"
               alt="A CYA member laughing during fellowship"
@@ -133,7 +133,7 @@ export function Hero() {
       <a
         href="#today"
         aria-label="Scroll to today's verse"
-        className="relative z-10 mx-auto mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-faint shadow-soft transition-colors hover:text-primary motion-safe:animate-float"
+        className="relative z-10 mx-auto mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-ink-faint shadow-soft transition-colors hover:text-primary motion-safe:animate-float"
       >
         <ArrowDown className="h-4.5 w-4.5" aria-hidden />
       </a>

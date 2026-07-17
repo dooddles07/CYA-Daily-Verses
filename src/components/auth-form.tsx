@@ -37,7 +37,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   if (done) {
     return (
       <div className="flex flex-col items-center gap-4 py-10 text-center" role="status">
-        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#e2f8ee] text-success">
+        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-mint-soft text-mint-strong">
           <Check className="h-8 w-8" aria-hidden />
         </span>
         <p className="text-xl font-extrabold text-ink">
@@ -72,7 +72,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
           <button
             key={s.name}
             type="button"
-            className="inline-flex h-12 cursor-pointer items-center justify-center gap-3 rounded-full border border-line bg-white text-sm font-bold text-ink transition-all duration-200 hover:border-primary hover:shadow-soft"
+            className="inline-flex h-12 cursor-pointer items-center justify-center gap-3 rounded-full border border-line bg-surface text-sm font-bold text-ink transition-all duration-200 hover:border-primary hover:shadow-soft"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
               <path d={s.path} />
@@ -99,7 +99,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
               autoComplete="name"
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "auth-name-err" : undefined}
-              className="mt-2 h-12 w-full rounded-2xl border border-line bg-white px-4 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
+              className="mt-2 h-12 w-full rounded-2xl border border-line bg-surface px-4 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
               placeholder="Your name"
             />
             {errors.name && <p id="auth-name-err" role="alert" className="mt-1.5 text-sm font-semibold text-danger">{errors.name}</p>}
@@ -115,7 +115,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
             inputMode="email"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "auth-email-err" : undefined}
-            className="mt-2 h-12 w-full rounded-2xl border border-line bg-white px-4 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
+            className="mt-2 h-12 w-full rounded-2xl border border-line bg-surface px-4 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
             placeholder="you@example.com"
           />
           {errors.email && <p id="auth-email-err" role="alert" className="mt-1.5 text-sm font-semibold text-danger">{errors.email}</p>}
@@ -137,7 +137,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
               autoComplete={isLogin ? "current-password" : "new-password"}
               aria-invalid={!!errors.password}
               aria-describedby={errors.password ? "auth-pw-err" : "auth-pw-help"}
-              className="h-12 w-full rounded-2xl border border-line bg-white px-4 pr-12 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
+              className="h-12 w-full rounded-2xl border border-line bg-surface px-4 pr-12 text-[15px] outline-none transition-colors duration-200 focus:border-primary"
               placeholder="••••••••"
             />
             <button

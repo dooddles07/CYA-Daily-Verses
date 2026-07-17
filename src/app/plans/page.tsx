@@ -69,8 +69,8 @@ export default function PlansPage() {
               </div>
             </div>
             <div className="flex flex-col justify-center gap-4 bg-sky-soft p-8 sm:p-10">
-              <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-soft">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#fff4d6] text-[#c98a00]">
+              <div className="flex items-center gap-4 rounded-2xl bg-surface p-5 shadow-soft">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-soft text-amber-strong">
                   <Flame className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
@@ -78,7 +78,7 @@ export default function PlansPage() {
                   <p className="text-xs text-ink-faint">Best: {streak.best} days — keep going!</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-soft">
+              <div className="flex items-center gap-4 rounded-2xl bg-surface p-5 shadow-soft">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-tint text-primary">
                   <CalendarCheck className="h-5 w-5" aria-hidden />
                 </span>
@@ -87,7 +87,7 @@ export default function PlansPage() {
                   <p className="text-xs text-ink-faint">{readingPlan.totalDays - readingPlan.day} days to finish the Gospels</p>
                 </div>
               </div>
-              <div className="rounded-2xl bg-white p-5 shadow-soft">
+              <div className="rounded-2xl bg-surface p-5 shadow-soft">
                 <p className="text-xs font-bold uppercase tracking-wider text-ink-faint">Coming up</p>
                 <ul className="mt-3 space-y-2 text-sm">
                   {readingPlan.upcoming.map((u) => (

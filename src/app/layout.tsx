@@ -46,10 +46,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0095ff",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0095ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1522" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
+
+// Runs before paint: applies saved theme (or system preference) to avoid a flash
+const themeInitScript = `(function(){try{var t=localStorage.getItem("cya-theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -57,8 +63,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${lora.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${manrope.variable} ${lora.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-2.5 focus:text-sm focus:font-bold focus:text-white"

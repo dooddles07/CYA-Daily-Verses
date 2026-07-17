@@ -41,7 +41,7 @@ export function PrayerPreview() {
                 <HandHelping className="h-4 w-4" aria-hidden />
                 {done ? "Praying" : "I prayed"}
                 <span
-                  className={`rounded-full px-1.5 text-xs ${done ? "bg-white/20" : "bg-white"}`}
+                  className={`rounded-full px-1.5 text-xs ${done ? "bg-white/20" : "bg-surface"}`}
                 >
                   {p.prayedCount + (done ? 1 : 0)}
                 </span>
@@ -98,7 +98,7 @@ export function QuoteCarousel() {
           type="button"
           onClick={() => go(-1)}
           aria-label="Previous quote"
-          className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-line bg-white text-ink-soft transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-line bg-surface text-ink-soft transition-colors hover:border-primary hover:text-primary"
         >
           <ChevronLeft className="h-4.5 w-4.5" aria-hidden />
         </button>
@@ -121,7 +121,7 @@ export function QuoteCarousel() {
           type="button"
           onClick={() => go(1)}
           aria-label="Next quote"
-          className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-line bg-white text-ink-soft transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-line bg-surface text-ink-soft transition-colors hover:border-primary hover:text-primary"
         >
           <ChevronRight className="h-4.5 w-4.5" aria-hidden />
         </button>
@@ -152,7 +152,7 @@ export function MoodChips() {
         <Link
           key={f}
           href={`/mood?feeling=${encodeURIComponent(f)}`}
-          className="rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold text-ink-soft shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-primary-700 hover:shadow-lift"
+          className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-semibold text-ink-soft shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-primary-700 hover:shadow-lift"
         >
           {f}
         </Link>

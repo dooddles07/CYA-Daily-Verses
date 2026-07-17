@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Flame, Menu, X } from "lucide-react";
 import { ButtonLink } from "@/components/ui";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { streak } from "@/lib/data";
 
 const links = [
@@ -78,12 +79,13 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <span
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#fff4d6] px-3 py-1.5 text-xs font-bold text-[#9a6b00]"
+            className="inline-flex items-center gap-1.5 rounded-full bg-amber-soft px-3 py-1.5 text-xs font-bold text-amber-strong"
             title={`${streak.current}-day reading streak`}
           >
             <Flame className="h-3.5 w-3.5" aria-hidden />
             {streak.current} days
           </span>
+          <ThemeToggle className="h-9 w-9" />
           <ButtonLink href="/login" variant="ghost" size="sm">
             Sign in
           </ButtonLink>
@@ -92,7 +94,9 @@ export function Navbar() {
           </ButtonLink>
         </div>
 
-        <button
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <ThemeToggle />
+          <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
@@ -100,7 +104,8 @@ export function Navbar() {
           className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-ink hover:bg-sky-soft lg:hidden"
         >
           {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
-        </button>
+          </button>
+        </div>
       </nav>
 
       {open && (
